@@ -1,0 +1,10 @@
+<robot name="qrobott">
+    <link name="base_link">
+        <visual>
+            <geometry>                
+                <mesh filename="package://robot_description/meshes/link_base.stl" scale="1.0 1.0 1.0"/>                  
+            </geometry>
+        </visual>
+    </link>
+           
+</robot>
