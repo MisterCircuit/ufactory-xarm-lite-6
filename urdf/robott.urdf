@@ -1,10 +1,56 @@
 <robot name="qrobott">
     <link name="base_link">
         <visual>
+            <origin xyz="0.01 0.01 0.01" rpy="0 0 0"/>
+            <geometry>
+                <box size="0 0 0"/>
+            </geometry> 
+        </visual>
+    </link> 
+
+    <link name="link_base">
+        <visual>
+            <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link_base.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
         </visual>
     </link>
-           
+
+    <link name="link1">
+        <visual>
+            <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+            <geometry>                
+                <mesh filename="package://robot_description/meshes/link1.stl" scale="1.0 1.0 1.0"/>                  
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="link2">
+        <visual>
+            <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+            <geometry>                
+                <mesh filename="package://robot_description/meshes/link2.stl" scale="1.0 1.0 1.0"/>                  
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="base_link_to_link_base" type="fixed">
+        <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="link_base"/> 
+    </joint>  
+
+    <joint name="link_base_to_link1" type="fixed">
+        <origin xyz="0 0 0.24" rpy="0.0 0.0 0.0"/>
+        <parent link="link_base"/>
+        <child link="link1"/> 
+    </joint> 
+
+    <joint name="link1_to_link2" type="fixed">
+        <origin xyz="0 0.0 0.0" rpy="-1.5 -1.5 0.0"/>
+        <parent link="link1"/>
+        <child link="link2"/> 
+    </joint> 
+
 </robot>
