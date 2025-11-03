@@ -1,4 +1,7 @@
 <robot name="qrobott">
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
     <link name="base_link">
         <visual>
             <origin xyz="0.01 0.01 0.01" rpy="0 0 0"/>
@@ -14,6 +17,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link_base.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -23,6 +27,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link1.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -32,6 +37,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link2.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -41,6 +47,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link3.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -50,6 +57,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link4.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -59,6 +67,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link5.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -68,6 +77,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/link6.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -77,6 +87,7 @@
             <geometry>                
                 <mesh filename="package://robot_description/meshes/gripper_lite.stl" scale="1.0 1.0 1.0"/>                  
             </geometry>
+            <material name="white"/>
         </visual>
     </link>
 
@@ -99,14 +110,14 @@
         <parent link="link1"/>
         <child link="link2"/> 
         <axis xyz="0 0 1"/>
-        <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+        <limit lower="-1.31" upper="1.31" effort="0" velocity="0"/>
     </joint> 
       <joint name="link2_to_link3" type="revolute">
         <origin xyz="0.2 0 0" rpy="3.14 0 1.57"/>
         <parent link="link2"/>
         <child link="link3"/> 
         <axis xyz="0 0 1"/>
-        <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+        <limit lower="-0.03" upper="2.62" effort="0" velocity="0"/>
     </joint>
 
       <joint name="link3_to_link4" type="revolute">
@@ -121,8 +132,8 @@
         <origin xyz="0 0 0" rpy="0 0 3.14"/>
         <parent link="link4"/>
         <child link="link5"/> 
-        <axis xyz="0 0 1"/>
-        <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.08" upper="1.08" effort="0" velocity="0"/>
     </joint>
 
     <joint name="link5_to_link6" type="revolute">
