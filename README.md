@@ -18,22 +18,32 @@ Make sure your machine has:
  
 
 ---
-## 1 Install ROS URDF tutorial:
+## Check if you have urdf tutorial installed
+```bash
+apt list --installed
+```
+If not, install urdf tutorial for your ROS distribution, for ros humble
+
+Update your apt repository
 ```bash
 sudo apt update
 ```
-For ros humble
+
+Installation
 ```bash
 sudo apt install ros-humble-urdf-tutorial
 ```
-## 2 Create a workspace for the repository
+## 1 Create workspace for the repository and navigate to the src folder
 ```bash
-mkdir -p ufractor_xarm7_ws/src
-cd ufractor_xarm7_ws/src 
+mkdir -p ufactory_xarm6_ws/src
+cd ufactory_xarm6_ws/src 
 ```
-## 2 Clone the Repository  
+## 2 Clone the Repository 
 ```bash
-git clone https://github.com/MisterCircuit/ufactory-xarm-lite-6.git  
+git clone https://github.com/MisterCircuit/ufactory-xarm-lite-6.git 
+```
+Navigate back to the workspace
+```bash 
 cd ..  
 ```
 ## 3 Build the ROS 2 package
@@ -46,5 +56,13 @@ source install/setup.bash
 ```
 ## 4 Launch Rviz Visualization
 ```bash
-ros2 launch urdf_tutorial display.launch.py model:=$PWD/robot_description/urdf/robott.urdf
+ros2 launch urdf_tutorial display.launch.py model:=$PWD/src/ufactory-xarm-lite-6/urdf/robott.urdf
 ```
+Once RViz opens, robot should appear, you should be able to enable joint displays
+
+## Contribution & Support
+
+Open an Issue for bugs or suggestions
+Submit a Pull Request to improve modeling or control
+
+## If the project helps you, consider giving it a star!
