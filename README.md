@@ -50,11 +50,11 @@ cd ..
 ```bash
 colcon build --symlink-install
 ```
-## 3 Source your workspace
+## 4 Source your workspace
 ```bash
 source install/setup.bash
 ```
-## 4 Launch Rviz Visualization
+## 5 Launch Rviz Visualization
 ```bash
 ros2 launch urdf_tutorial display.launch.py model:=$PWD/src/ufactory-xarm-lite-6/urdf/robott.urdf
 ```
